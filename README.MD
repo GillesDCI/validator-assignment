@@ -6,8 +6,8 @@ In this project we will be using express-validator to validate incoming data in 
 
 This project will allow you to practise:
 
-> Use of express-validator 
-> Writing middleware functions
+> - Use of express-validator 
+> - Writing middleware functions
 
 
 This project assumes you've already had experience with:
