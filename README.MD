@@ -59,15 +59,14 @@ app.listen(3001, () => {
   "age": "129",
   "fbw": "36",
   "profession" : "Musician",
-  "favoriteBands" : ["Radiohead", "Motorhead", "Machinehead", "The talking heads" ],
   "email" : "steve@steve.com"
 }
 ```
 For the  `/validation/validateUser` endpoint: 
 
 - Create a middleware method that will make sure the object received contains `firstName`, `lastName`, `age`, `fbw` and `email`.
-- Create a middleware method that will check if the user is above 18years old
-- Create a middleware method that will check if the user belongs to our FBW
+- Create a middleware method that will check if the user is above 18 years old
+- Create a middleware method that checks whether the e-mail address is valid.
 - If all the above is true, then you should send a response with a success message
 - If any of the middleware fails, you should send a response with an error message that says why the user is not valid.
 
@@ -83,15 +82,14 @@ For the  `/validation/validateUser` endpoint:
   "age": "129",
   "fbw": "36",
   "profession" : "Musician",
-  "favoriteBands" : ["Radiohead", "Motorhead", "Machinehead", "The talking heads" ],
   "email" : "steve@steve.com"
 }
 ```
 
 For the  `/validation/sanitizeUser` endpoint: 
 
- - Create a middleware that makes the `firstName` and `lastName` start with a capital letter
- - Create a middleware that sorts the `favoriteBands` array alphabetically
+ - Create a middleware that normalizes the `email`.
+- Create a middleware that makes the `firstName` and `lastName` start with a capital letter
  - Create a middleware that will turn `age` and `fbw` to numbers
 
 
