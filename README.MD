@@ -22,7 +22,9 @@ This project assumes you've already had experience with:
    `npm init -y`
 2. Install the express.js npm package
    `npm i express`
-3. Create a file for your server (`server.js`)
+3. Install the express-validator npm package
+   `npm i express-validator`
+4. Create a file for your server (`server.js`)
 
 
 ## Task 2 - Set up your server
@@ -48,24 +50,52 @@ app.listen(3001, () => {
   4. Assign the route application to their respective route. `/validation`
 
 
-## Task 4 - Create route handlers in postsRoutes.js
+## Task 4 - Create validateUser route handler
   1. Create a POST route handler `/validation/validateUser` which allows you to add a new user using the following JSON body :
  ```json
 {
   "firstName" : "steve",
   "lastName" : "stevenson",
   "age": "129",
-  "fbw": "36"
+  "fbw": "36",
+  "profession" : "Musician",
+  "favoriteBands" : ["Radiohead", "Motorhead", "Machinehead", "The talking heads" ],
+  "email" : "steve@steve.com"
+}
+```
+For the  `/validation/validateUser` endpoint: 
+
+- The object received contains `firstName`, `lastName`, `age`, `fbw` and `email`.
+- Create a middleware method that will check if the user is above 18years old
+- Create a middleware method that will check if the user belongs to our FBW
+- If all the above is true, then you should send a response with a success message
+- If any of the middleware fails, you should send a response with an error message that says why the user is not valid.
+
+
+
+
+## Task 5 - Create sanitizeUser route handler
+  1. Create a POST route handler `/validation/sanitizeUser` which allows you to add a new user using the following JSON body :
+ ```json
+{
+  "firstName" : "steve",
+  "lastName" : "stevenson",
+  "age": "129",
+  "fbw": "36",
   "profession" : "Musician",
   "favoriteBands" : ["Radiohead", "Motorhead", "Machinehead", "The talking heads" ],
   "email" : "steve@steve.com"
 }
 ```
 
+## Task 6 - Create a middleware method checkuser that validates the following
+ - Create a middleware that makes the `firstName` and `lastName` start with a capital letter
+ - Create a middleware that sorts the `favoriteBands` array alphabetically
+ - Create a middleware that will turn `age` and `fbw` to numbers
 
 
-
-
-
-
+## Resources
+-  https://github.com/validatorjs/validator.js#validators
+-  https://github.com/validatorjs/validator.js#sanitizers
+-  https://express-validator.github.io/docs/
 
