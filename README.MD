@@ -65,7 +65,7 @@ app.listen(3001, () => {
 ```
 For the  `/validation/validateUser` endpoint: 
 
-- The object received contains `firstName`, `lastName`, `age`, `fbw` and `email`.
+- Create a middleware method that will make sure the object received contains `firstName`, `lastName`, `age`, `fbw` and `email`.
 - Create a middleware method that will check if the user is above 18years old
 - Create a middleware method that will check if the user belongs to our FBW
 - If all the above is true, then you should send a response with a success message
@@ -88,7 +88,8 @@ For the  `/validation/validateUser` endpoint:
 }
 ```
 
-## Task 6 - Create a middleware method checkuser that validates the following
+For the  `/validation/sanitizeUser` endpoint: 
+
  - Create a middleware that makes the `firstName` and `lastName` start with a capital letter
  - Create a middleware that sorts the `favoriteBands` array alphabetically
  - Create a middleware that will turn `age` and `fbw` to numbers
